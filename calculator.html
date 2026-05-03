@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estimate your trip cost in seconds. Use the WanderLux Trip Cost Calculator to plan your holiday budget." />
+  <title>Trip Cost Calculator – WanderLux Travel Agency</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Wander<span>Lux</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="calculator.html" class="active">Trip Calculator</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-title">
+    <h1>Trip Cost Calculator</h1>
+    <p>Get an instant estimate for your dream holiday</p>
+  </div>
+
+  <section class="container fade-in">
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+      Enter your travel preferences below to receive a quick cost estimate.
+      The result is indicative only – contact us to receive an exact quote tailored to your needs.
+    </p>
+
+    <form id="calcForm" novalidate>
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <select id="destination" name="destination" aria-required="true">
+          <option value="">-- Select a destination --</option>
+          <option value="bali">Bali, Indonesia</option>
+          <option value="thailand">Thailand</option>
+          <option value="japan">Japan</option>
+          <option value="europe">Europe</option>
+          <option value="dubai">Dubai, UAE</option>
+          <option value="sydney">Sydney, Australia</option>
+          <option value="singapore">Singapore</option>
+          <option value="maldives">Maldives</option>
+        </select>
+        <div class="error-msg" id="destError" role="alert"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="travellers">Number of Travellers</label>
+        <input type="number" id="travellers" name="travellers" min="1" max="20" value="2" aria-required="true" />
+        <div class="error-msg" id="travError" role="alert"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" name="days" min="1" max="60" value="5" aria-required="true" />
+        <div class="error-msg" id="daysError" role="alert"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="style">Travel Style</label>
+        <select id="style" name="style" aria-required="true">
+          <option value="">-- Select a style --</option>
+          <option value="budget">Budget</option>
+          <option value="standard">Standard</option>
+          <option value="luxury">Luxury</option>
+        </select>
+        <div class="error-msg" id="styleError" role="alert"></div>
+      </div>
+
+      <button type="submit" class="btn">Calculate Cost</button>
+
+      <div class="result-box" id="resultBox" role="region" aria-live="polite">
+        <h3>Estimated Total</h3>
+        <p class="total" id="totalCost">$0</p>
+        <p id="costNote"></p>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+          <em>Estimate includes daily activities, internal transport, and accommodation. Flights are not included.</em>
+        </p>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 WanderLux Travel Agency. All rights reserved.</p>
+    <p>Email: <a href="mailto:info@wanderlux.com.au">info@wanderlux.com.au</a> | Phone: +61 2 1234 5678</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
